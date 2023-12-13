@@ -577,7 +577,60 @@ return 1;
     gdImageDestroy(img);
     return 0;
 }</pre>
-<p><img alt="" height="300" src="/images/hellogd.png" width="400"/></p><h1>Brython</h1>
+<p><img alt="" height="300" src="/images/hellogd.png" width="400"/></p>
+<h1>ANSIC</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+   int fno, sno, *ptr, *qtr, sum;
+
+   printf("\n\n Pointer : Add two numbers :\n"); 
+   printf("--------------------------------\n");   
+
+   printf(" Input the first number : ");
+   scanf("%d", &amp;fno);
+   printf(" Input the second  number : ");
+   scanf("%d", &amp;sno);   
+
+   ptr = &amp;fno;
+   qtr = &amp;sno;
+
+   sum = *ptr + *qtr;
+
+   printf(" The sum of the entered numbers is : %d\n\n",sum);
+
+   return 0;
+}</pre>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int calculateLength(char*);
+
+void main() 
+{
+   char str1[25];
+   int l;
+  printf("\n\n Pointer : Calculate the length of the string :\n"); 
+  printf("---------------------------------------------------\n");
+
+   printf(" Input a string : ");
+   fgets(str1, sizeof str1, stdin);
+
+   l = calculateLength(str1);
+   printf(" The length of the given string %s is : %d ", str1, l-1);
+   printf("\n\n");
+
+}
+
+int calculateLength(char* ch) // ch = base address of array str1 ( &amp;str1[0]  )
+{
+   int ctr = 0;
+   while (*ch != '\0') 
+   {
+      ctr++;
+      ch++;
+   }
+   return ctr;
+}</pre>
+<p><br/><br/></p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
