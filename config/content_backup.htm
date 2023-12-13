@@ -577,40 +577,40 @@ return 1;
     gdImageDestroy(img);
     return 0;
 }</pre>
-<p><img alt="" height="300" src="/images/hellogd.png" width="400"/></p><h1><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">ANSIC</span></span></h1>
+<p><img alt="" height="300" src="/images/hellogd.png" width="400"/></p><h1>ANSIC</h1>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">1.</span></span></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include </span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-int main()</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 定義變數和指標</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    int fno、sno、*ptr、*qtr、總和；</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 提示使用者輸入第一個數字</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    printf("\n\n 指標：兩個數字相加：\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    printf(“--------------------------------\n”);</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    printf("輸入第一個數字：");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    scanf(“%d”, &amp;fno);</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 提示使用者輸入第二個數字</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    printf("輸入第二個數字：");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    scanf(“%d”, &amp;sno);</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 指向第一個數字的指標</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    ptr = &amp;fno;</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 指向第二個數字的指標</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    qtr = &amp;sno;</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 計算兩個數的總和</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    總和 = *ptr + *qtr；</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 輸出總和</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    printf("輸入的兩個數字的總和 : %d\n\n", sum);</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    返回0；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span></pre>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    // 宣告變數和指標
+    int fno, sno, *ptr, *qtr, sum;
+
+    // 提示用戶輸入第一個數字
+    printf("\n\n Pointer : Add two numbers :\n");
+    printf("--------------------------------\n");
+
+    printf(" 輸入第一個數字 : ");
+    scanf("%d", &amp;fno);
+
+    // 提示用戶輸入第二個數字
+    printf(" 輸入第二個數字 : ");
+    scanf("%d", &amp;sno);
+
+    // 指向第一個數字的指標
+    ptr = &amp;fno;
+
+    // 指向第二個數字的指標
+    qtr = &amp;sno;
+
+    // 計算兩數的總和
+    sum = *ptr + *qtr;
+
+    // 輸出總和
+    printf(" 輸入的兩個數字的總和 : %d\n\n", sum);
+
+    return 0;
+}</pre>
 <p><br/><br/><br/></p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
