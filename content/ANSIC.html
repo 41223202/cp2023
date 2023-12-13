@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='w5.html'>w5</a><li><a href='w6.html'>w6</a><li><a href='w7.html'>w7</a><li><a href='w13.html'>w13</a><li><a href='ANSIC.html'>ANSIC</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li><a href='w5.html'>w5</a><li><a href='w6.html'>w6</a><li><a href='w7.html'>w7</a><li><a href='w11.html'>w11</a><li><a href='ANSIC.html'>ANSIC</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,7 +142,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w13 << <a href='w13.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython<br /><h1>ANSIC</h1>
+    <div id="tipue_search_content">w11 << <a href='w11.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython<br /><h1>ANSIC</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 int main()
 {
@@ -166,35 +166,38 @@ int main()
    return 0;
 }</pre>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-int calculateLength(char*);
 
-void main() 
+int main()
 {
-   char str1[25];
-   int l;
-  printf("\n\n Pointer : Calculate the length of the string :\n"); 
-  printf("---------------------------------------------------\n");
+    // 宣告變數和指標
+    int fno, sno, *ptr, *qtr, sum;
 
-   printf(" Input a string : ");
-   fgets(str1, sizeof str1, stdin);
+    // 提示用戶輸入第一個數字
+    printf("\n\n Pointer : Add two numbers :\n");
+    printf("--------------------------------\n");
 
-   l = calculateLength(str1);
-   printf(" The length of the given string %s is : %d ", str1, l-1);
-   printf("\n\n");
+    printf(" 輸入第一個數字 : ");
+    scanf("%d", &amp;fno);
 
-}
+    // 提示用戶輸入第二個數字
+    printf(" 輸入第二個數字 : ");
+    scanf("%d", &amp;sno);
 
-int calculateLength(char* ch) // ch = base address of array str1 ( &amp;str1[0]  )
-{
-   int ctr = 0;
-   while (*ch != '\0') 
-   {
-      ctr++;
-      ch++;
-   }
-   return ctr;
+    // 指向第一個數字的指標
+    ptr = &amp;fno;
+
+    // 指向第二個數字的指標
+    qtr = &amp;sno;
+
+    // 計算兩數的總和
+    sum = *ptr + *qtr;
+
+    // 輸出總和
+    printf(" 輸入的兩個數字的總和 : %d\n\n", sum);
+
+    return 0;
 }</pre>
-<p><br/><br/></p><br />w13 << <a href='w13.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
+<p><br/><br/><br/></p><br />w11 << <a href='w11.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
         
     <!-- footer -->
       <div class="container">

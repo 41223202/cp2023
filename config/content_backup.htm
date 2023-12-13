@@ -601,7 +601,39 @@ int main()
 
    return 0;
 }</pre>
-<p></p><h1>Brython</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    // 宣告變數和指標
+    int fno, sno, *ptr, *qtr, sum;
+
+    // 提示用戶輸入第一個數字
+    printf("\n\n Pointer : Add two numbers :\n");
+    printf("--------------------------------\n");
+
+    printf(" 輸入第一個數字 : ");
+    scanf("%d", &amp;fno);
+
+    // 提示用戶輸入第二個數字
+    printf(" 輸入第二個數字 : ");
+    scanf("%d", &amp;sno);
+
+    // 指向第一個數字的指標
+    ptr = &amp;fno;
+
+    // 指向第二個數字的指標
+    qtr = &amp;sno;
+
+    // 計算兩數的總和
+    sum = *ptr + *qtr;
+
+    // 輸出總和
+    printf(" 輸入的兩個數字的總和 : %d\n\n", sum);
+
+    return 0;
+}</pre>
+<p><br/><br/><br/></p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
