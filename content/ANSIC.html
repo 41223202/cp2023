@@ -424,7 +424,35 @@ int main(void)
 #endif
 }
 </pre>
-<p><img alt="" height="82" src="./../images/universal.PNG" width="400"/></p><br />w13 << <a href='w13.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
+<p><img alt="" height="82" src="./../images/universal.PNG" width="400"/></p>
+<p>10.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define __STDC_WANT_LIB_EXT1__ 1
+#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+
+int main(void)
+{
+    time_t t = time(NULL);  // 獲取當前時間的秒數，存儲在變數 't' 中。
+
+    printf("\n 表達為協調世界時的日曆時間是：");
+    printf("\n UTC:   %s", asctime(gmtime(&amp;t)));  // 使用 'gmtime' 將時間轉換為 UTC 時間，然後使用 'asctime' 打印。
+
+    printf(" 本地時間: %s\n", asctime(localtime(&amp;t)));  // 使用 'localtime' 將時間轉換為本地時間，然後使用 'asctime' 打印。
+
+#ifdef __STDC_LIB_EXT1__
+    struct tm buf;
+    char str[26];
+
+    asctime_s(str, sizeof str, gmtime_s(&amp;t, &amp;buf));  // 安全版本：使用 'gmtime_s' 將時間轉換為 UTC 時間，然後使用 'asctime_s' 打印。
+    printf(" UTC:   %s", str);
+
+    asctime_s(str, sizeof str, localtime_s(&amp;t, &amp;buf));  // 安全版本：使用 'localtime_s' 將時間轉換為本地時間，然後使用 'asctime_s' 打印。
+    printf(" 本地時間: %s", str);
+#endif
+}
+</pre>
+<p><img alt="" height="44" src="./../images/centugrade.PNG" width="400"/></p>
+<p></p><br />w13 << <a href='w13.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
         
     <!-- footer -->
       <div class="container">
