@@ -176,7 +176,255 @@ int main()
 
     return 0;
 }</pre>
-<p><img alt="" height="40" src="./../images/add.PNG" width="200"/><br/><br/><br/></p><br />w13 << <a href='w13.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
+<p><img alt="" height="40" src="./../images/add.PNG" width="200"/><br/><br/><br/></p>
+<p>2.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+// 函數原型
+int calculateLength(char*);
+
+void main() 
+{
+    char str1[25];
+    int l;
+
+    printf("\n\n 指針：計算字符串的長度：\n"); 
+    printf("---------------------------------------------------\n");
+
+    // 輸入一個字符串
+    printf(" 輸入一個字符串：");
+    fgets(str1, sizeof str1, stdin);
+
+    // 計算字符串的長度
+    l = calculateLength(str1);
+
+    // 輸出字符串的長度
+    printf(" 給定字符串 %s 的長度是：%d ", str1, l - 1);
+    printf("\n\n");
+}
+
+// 函數，用於計算字符串的長度
+int calculateLength(char* ch)
+{
+    int ctr = 0;
+
+    // 通過迭代字符直到遇到空字符
+    while (*ch != '\0') 
+    {
+        ctr++;
+        ch++;
+    }
+
+    return ctr;
+}
+</pre>
+<p></p>
+<p><img alt="" height="38" src="./../images/calculate.PNG" width="200"/></p>
+<p>3.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"># include &lt;stdio.h&gt;
+# include &lt;string.h&gt;
+
+int main()
+{
+    int n, x = 0;
+    
+    printf("\n\n 檢查給定數字是否是醜數:\n");
+    printf("----------------------------------------------------\n");
+    
+    // 輸入一個整數
+    printf(" 輸入一個整數: ");
+    scanf("%d", &amp;n);
+
+    if (n &lt;= 0) 
+    {  
+        printf("請輸入正確的數字.");  
+    }
+    
+    while (n != 1) 
+    {  
+        if (n % 5 == 0) 
+        {  
+            n /= 5;  
+        } 
+        else if (n % 3 == 0) 
+        {  
+            n /= 3;  
+        } 
+        else if (n % 2 == 0) 
+        {  
+            n /= 2;  
+        } 
+        else 
+        {  
+            printf("它不是一個醜數.\n"); 
+            x = 1;  
+            break;  
+        }  
+    } 
+    
+    if (x == 0) 
+    { 
+        printf("它是一個醜數.\n");
+    }
+
+    return 0; // 返回 0，表示正常結束程序
+}
+</pre>
+<p></p>
+<p><img alt="" height="216" src="./../images/number.PNG" width="300"/></p>
+<p>4.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // 包含標準輸入/輸出頭文件。
+
+void main()
+{
+    int num1, rem1;  // 声明两个整数变量 'num1' 和 'rem1'。
+
+    printf("輸入一個整數: ");  // 提示用戶輸入一個整數。
+    scanf("%d", &amp;num1);  // 讀取並將用戶輸入的值存儲在 'num1' 中。
+    rem1 = num1 % 2;  // 計算 'num1' 除以 2 的餘數。
+    if (rem1 == 0)  // 檢查餘數是否等於 0。
+        printf("%d 是一個偶數\n", num1);  // 打印一條消息，指示 'num1' 是一個偶數。
+    else
+        printf("%d 是一個奇數\n", num1);  // 打印一條消息，指示 'num1' 是一個奇數。
+}
+</pre>
+<p></p>
+<p><img alt="" height="59" src="./../images/odd.PNG" width="186"/></p>
+<p>5.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // 包含標準輸入/輸出頭文件。
+
+void main()
+{
+    int co1, co2;  // 声明两个整数变量 'co1' 和 'co2' 來存儲座標。
+
+    printf("輸入X和Y坐標的值：");  // 提示用戶輸入座標。
+    scanf("%d %d", &amp;co1, &amp;co2);  // 讀取並將用戶輸入的值存儲在 'co1' 和 'co2' 中。
+
+    if (co1 &gt; 0 &amp;&amp; co2 &gt; 0)  // 檢查 'co1' 和 'co2' 是否都是正數。
+        printf("該座標點（%d,%d）位於第一象限。\n", co1, co2);  // 打印一條消息，指示該座標位於第一象限。
+    else if (co1 &lt; 0 &amp;&amp; co2 &gt; 0)  // 檢查 'co1' 是否為負數並且 'co2' 是否為正數。
+        printf("該座標點（%d,%d）位於第二象限。\n", co1, co2);  // 打印一條消息，指示該座標位於第二象限。
+    else if (co1 &lt; 0 &amp;&amp; co2 &lt; 0)  // 檢查 'co1' 和 'co2' 是否都是負數。
+        printf("該座標點（%d, %d）位於第三象限。\n", co1, co2);  // 打印一條消息，指示該座標位於第三象限。
+    else if (co1 &gt; 0 &amp;&amp; co2 &lt; 0)  // 檢查 'co1' 是否為正數並且 'co2' 是否為負數。
+        printf("該座標點（%d,%d）位於第四象限。\n", co1, co2);  // 打印一條消息，指示該座標位於第四象限。
+    else if (co1 == 0 &amp;&amp; co2 == 0)  // 檢查 'co1' 和 'co2' 是否都是零。
+        printf("該座標點（%d,%d）位於原點。\n", co1, co2);  // 打印一條消息，指示該座標位於原點。
+}
+</pre>
+<p><img alt="" height="199" src="./../images/quadrant.PNG" width="366"/></p>
+<p>6.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;    // 包含標準輸入/輸出頭文件。
+#include &lt;stdlib.h&gt;   // 包含標準庫頭文件。
+#include &lt;time.h&gt;     // 包含時間頭文件，用於生成隨機數。
+
+int main()           // 主函數的開始。
+{
+    int number, input;   // 声明兩個整數變量 'number' 和 'input'。
+
+    srand(time(NULL));   // 使用當前時間初始化隨機種子。
+
+    number = rand() % 10 + 1;   // 生成一個介於1到10之間的隨機數並將其存儲在 'number' 中。
+
+    do {   // 開始一個 do-while 循環。
+        printf("\n猜數字 (1 到 10): ");   // 打印一條消息，提示用戶猜數字。
+        scanf("%d", &amp;input);    // 讀取用戶的輸入並將其存儲在 'input' 中。
+
+        if (number &gt; input)   // 如果隨機數大於用戶的輸入。
+            printf("數字較大\n");   // 打印一條消息，指示數字較大。
+
+    } while (number != input);   // 只要用戶的輸入不等於隨機數，就繼續循環。
+
+    printf("答對了！\n\n");   // 打印一條消息，指示用戶猜對了。
+
+    return 0;   // 返回 0，表示程序運行成功。
+}   // 主函數的結尾。
+</pre>
+<p><img alt="" height="162" src="./../images/random.PNG" width="200"/></p>
+<p>7.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;time.h&gt;    // 包含時間頭文件。
+#include &lt;stdio.h&gt;   // 包含標準輸入/輸出頭文件。
+#include &lt;stdlib.h&gt;  // 包含標準庫頭文件。
+
+int main(void)
+{
+    time_t cur_time;      // 声明一個 time_t 類型的變量 'cur_time' 用於存儲當前時間。
+    char* cur_t_string;   // 声明一個字符指針 'cur_t_string' 用於存儲轉換後的時間字符串。
+
+    cur_time = time(NULL);   // 獲取當前的日期和時間。
+    if (cur_time == ((time_t)-1))
+    {
+        (void) fprintf(stderr, "無法獲取當前日期和時間。\n");
+        exit(EXIT_FAILURE);   // 如果獲取失敗，輸出錯誤消息並退出程序。
+    }
+
+    cur_t_string = ctime(&amp;cur_time);   // 將時間轉換為本地時間格式的字符串。
+    if (cur_t_string == NULL)
+    {
+        (void) fprintf(stderr, "無法轉換當前日期和時間。\n");
+        exit(EXIT_FAILURE);   // 如果轉換失敗，輸出錯誤消息並退出程序。
+    }
+
+    (void) printf("\n 當前時間是：%s \n", cur_t_string);   // 打印當前的日期和時間字符串。
+
+    exit(EXIT_SUCCESS);   // 退出程序，表示成功執行。
+}
+</pre>
+<p><img alt="" height="67" src="./../images/time.PNG" width="300"/></p>
+<p>8.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+void main()
+{
+    int fno, sno, *ptr1 = &amp;fno, *ptr2 = &amp;sno;
+
+    printf("\n\n 指針：找出兩個數字之間的最大值：\n");
+    printf("------------------------------------------------------------\n");
+
+    printf(" 輸入第一個數字：");
+    scanf("%d", ptr1);
+    printf(" 輸入第二個數字：");
+    scanf("%d", ptr2);
+
+    if (*ptr1 &gt; *ptr2)
+    {
+        printf("\n\n %d 是最大的數字。\n\n", *ptr1);
+    }
+    else
+    {
+        printf("\n\n %d 是最大的數字。\n\n", *ptr2);
+    }
+}
+</pre>
+<p><img alt="" height="79" src="./../images/two.PNG" width="200"/></p>
+<p>9.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define __STDC_WANT_LIB_EXT1__ 1
+#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+
+int main(void)
+{
+    time_t t = time(NULL);  // 獲取當前時間的秒數，存儲在變數 't' 中。
+
+    printf("\n 表達為協調世界時的日曆時間是：");
+    printf("\n UTC:   %s", asctime(gmtime(&amp;t)));  // 使用 'gmtime' 將時間轉換為 UTC 時間，然後使用 'asctime' 打印。
+
+    printf(" 本地時間: %s\n", asctime(localtime(&amp;t)));  // 使用 'localtime' 將時間轉換為本地時間，然後使用 'asctime' 打印。
+
+#ifdef __STDC_LIB_EXT1__
+    struct tm buf;
+    char str[26];
+
+    asctime_s(str, sizeof str, gmtime_s(&amp;t, &amp;buf));  // 安全版本：使用 'gmtime_s' 將時間轉換為 UTC 時間，然後使用 'asctime_s' 打印。
+    printf(" UTC:   %s", str);
+
+    asctime_s(str, sizeof str, localtime_s(&amp;t, &amp;buf));  // 安全版本：使用 'localtime_s' 將時間轉換為本地時間，然後使用 'asctime_s' 打印。
+    printf(" 本地時間: %s", str);
+#endif
+}
+</pre>
+<p><img alt="" height="82" src="./../images/universal.PNG" width="400"/></p><br />w13 << <a href='w13.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
         
     <!-- footer -->
       <div class="container">
