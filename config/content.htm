@@ -714,6 +714,36 @@ int main() {
 }</pre>
 <p><video controls="controls" height="630" width="1008">
 <source src="/images/tdtal distance"/></video></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">4.</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+    float x, y, z, P; // 声明變量以存儲三角形的三邊長和周長
+
+    // 提示用戶輸入三個數字，分別存儲在 'x'、'y' 和 'z'
+    printf("\n輸入第一個數字："); 
+    scanf("%f", &amp;x);
+    printf("\n輸入第二個數字：");
+    scanf("%f", &amp;y);
+    printf("\n輸入第三個數字：");
+    scanf("%f", &amp;z);
+
+    if (x &lt; (y + z) &amp;&amp; y &lt; (x + z) &amp;&amp; z &lt; (x + y)) // 檢查這三個數字是否能構成一個三角形
+    {  
+        P = x + y + z; // 計算周長
+        printf("\n周長 = %.1f\n", P); // 輸出周長	 
+    }
+    else
+    {
+        printf("無法構成三角形..！"); // 如果無法構成三角形，輸出相應的消息
+    }
+
+    return 0;
+}
+
+</pre>
+<p><video controls="controls" height="630" width="1008">
+<source src="/images/triangle.mp4" type="video/mp4"/></video></p>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">3.</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
