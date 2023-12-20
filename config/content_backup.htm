@@ -654,6 +654,41 @@ int main()
 }</pre>
 <p><video controls="controls" height="630" width="1008">
 <source src="/images/reverse"/></video></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">2.</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+    int j, numbers[5], total=0; // 声明循环计数器、一个包含五个数字的数组以及总和变量
+
+    // 提示用户输入五个数字，并将它们存储在数组中
+    printf("\n輸入第一個數字："); 
+    scanf("%d", &amp;numbers[0]);
+    printf("\n輸入第二個數字："); 
+    scanf("%d", &amp;numbers[1]);
+    printf("\n輸入第三個數字："); 
+    scanf("%d", &amp;numbers[2]);
+    printf("\n輸入第四個數字："); 
+    scanf("%d", &amp;numbers[3]);
+    printf("\n輸入第五個數字："); 
+    scanf("%d", &amp;numbers[4]);
+
+    // 通过循环遍历这些数字，找到并计算奇数的总和
+    for(j = 0; j &lt; 5; j++) {
+        if((numbers[j] % 2) != 0) 
+        {
+            total += numbers[j];
+        }   
+    }
+
+    // 打印奇數總和
+    printf("\n所有奇數的總和：%d", total);
+    printf("\n");
+
+    return 0;
+}
+</pre>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><video controls="controls" height="630" width="1008">
+<source src="/images/all odd"/></video></span></span></p>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">11.</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
