@@ -690,7 +690,31 @@ int main() {
 <p><video controls="controls" height="630" width="1008">
 <source src="/images/all odd.mp4" type="video/mp4"/></video></p>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><video controls="controls" height="630" width="1008">
-<source src="/images/all odd"/></video></span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">3.</span></span></p>
+<source src="/images/all odd"/></video></span></span></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">3.</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+    int x;    // 用於存儲總行駛距離的變量（公里）
+    float y;  // 用於存儲總耗油量的變量（升）
+
+    // 提示用戶輸入總行駛距離，並將其存儲在 'x' 中
+    printf("輸入總行駛距離（公里）：");
+    scanf("%d", &amp;x);
+
+    // 提示用戶輸入總耗油量，並將其存儲在 'y' 中
+    printf("輸入總耗油量（升）：");
+    scanf("%f", &amp;y);
+
+    // 計算並打印平均油耗
+    printf("平均油耗（公里/升）：%.3f ", x / y);
+    printf("\n");
+
+    return 0;
+}</pre>
+<p><video controls="controls" height="630" width="1008">
+<source src="/images/total distance.mp4" type="video/mp4"/></video></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">3.</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
 int main()
