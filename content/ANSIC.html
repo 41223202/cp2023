@@ -197,32 +197,9 @@ int main() {
 </pre>
 <p><video controls="controls" height="630" width="1008">
 <source src="./../images/all odd.mp4" type="video/mp4"/></video></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><video controls="controls" height="630" width="1008">
-<source src="./../images/all odd"/></video></span></span></p>
+<p></p>
+<p></p>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">3.</span></span></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-
-int main() {
-    int x;    // 用於存儲總行駛距離的變量（公里）
-    float y;  // 用於存儲總耗油量的變量（升）
-
-    // 提示用戶輸入總行駛距離，並將其存儲在 'x' 中
-    printf("輸入總行駛距離（公里）：");
-    scanf("%d", &amp;x);
-
-    // 提示用戶輸入總耗油量，並將其存儲在 'y' 中
-    printf("輸入總耗油量（升）：");
-    scanf("%f", &amp;y);
-
-    // 計算並打印平均油耗
-    printf("平均油耗（公里/升）：%.3f ", x / y);
-    printf("\n");
-
-    return 0;
-}</pre>
-<p><video controls="controls" height="630" width="1008">
-<source src="./../images/tdtal distance"/></video></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">4.</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
 int main() {
@@ -252,7 +229,7 @@ int main() {
 </pre>
 <p><video controls="controls" height="630" width="1008">
 <source src="./../images/triangle.mp4" type="video/mp4"/></video></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">3.</span></span></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">4.</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
 int main()
@@ -286,7 +263,7 @@ int main()
     return 0;
 }</pre>
 <p><img alt="" height="40" src="./../images/add.PNG" width="200"/><br/><br/><br/></p>
-<p>4.</p>
+<p>5.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
 // 函數原型
@@ -329,7 +306,7 @@ int calculateLength(char* ch)
 </pre>
 <p></p>
 <p><img alt="" height="38" src="./../images/calculate.PNG" width="200"/></p>
-<p>5.</p>
+<p>6.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"># include &lt;stdio.h&gt;
 # include &lt;string.h&gt;
 
@@ -381,7 +358,7 @@ int main()
 </pre>
 <p></p>
 <p><img alt="" height="216" src="./../images/number.PNG" width="300"/></p>
-<p>6.</p>
+<p>7.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // 包含標準輸入/輸出頭文件。
 
 void main()
@@ -399,7 +376,7 @@ void main()
 </pre>
 <p></p>
 <p><img alt="" height="59" src="./../images/odd.PNG" width="186"/></p>
-<p>7.</p>
+<p>8.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // 包含標準輸入/輸出頭文件。
 
 void main()
@@ -422,7 +399,7 @@ void main()
 }
 </pre>
 <p><img alt="" height="199" src="./../images/quadrant.PNG" width="366"/></p>
-<p>8.</p>
+<p>9.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;    // 包含標準輸入/輸出頭文件。
 #include &lt;stdlib.h&gt;   // 包含標準庫頭文件。
 #include &lt;time.h&gt;     // 包含時間頭文件，用於生成隨機數。
@@ -450,7 +427,7 @@ int main()           // 主函數的開始。
 }   // 主函數的結尾。
 </pre>
 <p><img alt="" height="162" src="./../images/random.PNG" width="200"/></p>
-<p>9.</p>
+<p>10.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;time.h&gt;    // 包含時間頭文件。
 #include &lt;stdio.h&gt;   // 包含標準輸入/輸出頭文件。
 #include &lt;stdlib.h&gt;  // 包含標準庫頭文件。
@@ -480,7 +457,7 @@ int main(void)
 }
 </pre>
 <p><img alt="" height="67" src="./../images/time.PNG" width="300"/></p>
-<p>10.</p>
+<p>11.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 
@@ -507,33 +484,6 @@ void main()
 }
 </pre>
 <p><img alt="" height="79" src="./../images/two.PNG" width="200"/></p>
-<p>11.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define __STDC_WANT_LIB_EXT1__ 1
-#include &lt;stdio.h&gt;
-#include &lt;time.h&gt;
-
-int main(void)
-{
-    time_t t = time(NULL);  // 獲取當前時間的秒數，存儲在變數 't' 中。
-
-    printf("\n 表達為協調世界時的日曆時間是：");
-    printf("\n UTC:   %s", asctime(gmtime(&amp;t)));  // 使用 'gmtime' 將時間轉換為 UTC 時間，然後使用 'asctime' 打印。
-
-    printf(" 本地時間: %s\n", asctime(localtime(&amp;t)));  // 使用 'localtime' 將時間轉換為本地時間，然後使用 'asctime' 打印。
-
-#ifdef __STDC_LIB_EXT1__
-    struct tm buf;
-    char str[26];
-
-    asctime_s(str, sizeof str, gmtime_s(&amp;t, &amp;buf));  // 安全版本：使用 'gmtime_s' 將時間轉換為 UTC 時間，然後使用 'asctime_s' 打印。
-    printf(" UTC:   %s", str);
-
-    asctime_s(str, sizeof str, localtime_s(&amp;t, &amp;buf));  // 安全版本：使用 'localtime_s' 將時間轉換為本地時間，然後使用 'asctime_s' 打印。
-    printf(" 本地時間: %s", str);
-#endif
-}
-</pre>
-<p><img alt="" height="82" src="./../images/universal.PNG" width="400"/></p>
 <p>12.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define __STDC_WANT_LIB_EXT1__ 1
 #include &lt;stdio.h&gt;
@@ -560,7 +510,73 @@ int main(void)
 #endif
 }
 </pre>
-<p><img alt="" height="44" src="./../images/centugrade.PNG" width="400"/></p><br />w15 << <a href='w15.html'>Previous</a> <a href='c_ex.html'>Next</a> >> c_ex</div>
+<p><img alt="" height="82" src="./../images/universal.PNG" width="400"/></p>
+<p>13.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define __STDC_WANT_LIB_EXT1__ 1
+#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+
+int main(void)
+{
+    time_t t = time(NULL);  // 獲取當前時間的秒數，存儲在變數 't' 中。
+
+    printf("\n 表達為協調世界時的日曆時間是：");
+    printf("\n UTC:   %s", asctime(gmtime(&amp;t)));  // 使用 'gmtime' 將時間轉換為 UTC 時間，然後使用 'asctime' 打印。
+
+    printf(" 本地時間: %s\n", asctime(localtime(&amp;t)));  // 使用 'localtime' 將時間轉換為本地時間，然後使用 'asctime' 打印。
+
+#ifdef __STDC_LIB_EXT1__
+    struct tm buf;
+    char str[26];
+
+    asctime_s(str, sizeof str, gmtime_s(&amp;t, &amp;buf));  // 安全版本：使用 'gmtime_s' 將時間轉換為 UTC 時間，然後使用 'asctime_s' 打印。
+    printf(" UTC:   %s", str);
+
+    asctime_s(str, sizeof str, localtime_s(&amp;t, &amp;buf));  // 安全版本：使用 'localtime_s' 將時間轉換為本地時間，然後使用 'asctime_s' 打印。
+    printf(" 本地時間: %s", str);
+#endif
+}
+</pre>
+<p><img alt="" height="44" src="./../images/centugrade.PNG" width="400"/></p>
+<p>14.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+    float numbers[5]; // 声明一個數組來存儲5個數字
+    int j, pctr = 0, nctr = 0; // 声明循环计数器、正數計數和負數計數
+
+    // 提示用戶輸入五個數字，並將它們存儲在數組中
+    printf("\n輸入第一個數字："); 
+    scanf("%f", &amp;numbers[0]);
+    printf("\n輸入第二個數字："); 
+    scanf("%f", &amp;numbers[1]);
+    printf("\n輸入第三個數字："); 
+    scanf("%f", &amp;numbers[2]);
+    printf("\n輸入第四個數字："); 
+    scanf("%f", &amp;numbers[3]);
+    printf("\n輸入第五個數字："); 
+    scanf("%f", &amp;numbers[4]);
+
+    for (j = 0; j &lt; 5; j++) {
+        if (numbers[j] &gt; 0) // 檢查數字是否為正數
+        {
+            pctr++; // 增加正數計數
+        } else if (numbers[j] &lt; 0) // 檢查數字是否為負數
+        {
+            nctr++; // 增加負數計數
+        }
+    }
+
+    // 輸出正數和負數的個數
+    printf("\n正數的個數：%d", pctr);
+    printf("\n負數的個數：%d", nctr);
+    printf("\n");
+
+    return 0;
+}
+</pre>
+<p><video controls="controls" height="630" width="1008">
+<source src="//images/positive negative"/></video></p><br />w15 << <a href='w15.html'>Previous</a> <a href='c_ex.html'>Next</a> >> c_ex</div>
         
     <!-- footer -->
       <div class="container">
