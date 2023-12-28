@@ -184,7 +184,26 @@ printf( " a &lt;= b is %d \n", a &lt;= b );
 printf( " a != b is %d \n", a != b );
 return 0;
 }</pre>
-<p><img alt="" height="365" src="./../images/2.png" width="250"/></p><br />ANSIC << <a href='ANSIC.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
+<p><img alt="" height="365" src="./../images/2.png" width="250"/></p>
+<p>3.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+位元運算元的範例.
+==================== */
+#include&lt;stdio.h&gt;
+void main()
+{
+int a,b;
+a = 15;
+b = 1;
+printf("%d \n", a | b ); /* a OR b */
+printf("%d \n", a &amp; b ); /* a AND b */
+printf("%d \n", a ^ b ); /* a XOR b */
+printf("%d \n", a &lt;&lt; 1 ); /* a 位元左移 1 位 */
+printf("%d \n", a &gt;&gt; 1 ); /* a 位元右移一位 */
+printf("%d \n", ~a ); /* A 的補數運算 */
+}</pre>
+<p><img alt="" height="192" src="./../images/3.png" width="265"/><br/><br/></p>
+<p></p><br />ANSIC << <a href='ANSIC.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
         
     <!-- footer -->
       <div class="container">
