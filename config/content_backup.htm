@@ -1861,13 +1861,69 @@ int main() {
 <source src="//images/positive negative"/></video></p>
 <h1>c_ex</h1>
 <p>1.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+Logical NOT.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int a;
+a = 3;
+printf("%d\n", !a );
+a = 0;
+printf("%d\n", !a );
+}</pre>
+<p><img alt="" height="88" src="/images/1.PNG" width="200"/></p>
+<p><video controls="controls" height="630" width="1008">
+<source src="/images/c5.mp4" type="video/mp4"/></video></p>
+<p>2.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+基本運算範例.
+==================== */
+#include&lt;stdio.h&gt;
+int main()
+{
+int a,b;
+a = 10; b = 3;
+printf( "%d \n", a * b );
+printf( "%d \n", a / b );
+printf( "%d \n", a + b );
+printf( "%d \n", a - b );
+printf( "%d \n", a % b );
+return 0;
+}</pre>
+<p><img alt="" height="166" src="/images/1.png" width="250"/></p>
 <p><video controls="controls" height="630" width="1008">
 <source src="/images/c1.mp4" type="video/mp4"/></video><br/><br/></p>
-<p>2.</p>
+<p>3.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+關係運算元的範例.
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+int a = 10, b = 5;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+printf( "\n" );
+b = 10;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+return 0;
+}</pre>
+<p><img alt="" height="365" src="/images/2.png" width="250"/></p>
 <p><video controls="controls" height="630" width="1008">
 <source src="/images/c3.mp4" type="video/mp4"/></video></p>
 <p></p>
-<p>3.</p>
+<p>4.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
 位元運算元的範例.
 ==================== */
@@ -1885,14 +1941,52 @@ printf("%d \n", a &gt;&gt; 1 ); /* a 位元右移一位 */
 printf("%d \n", ~a ); /* A 的補數運算 */
 }</pre>
 <p><img alt="" height="192" src="/images/3.png" width="265"/><br/><br/></p>
-<p>4.</p>
+<p><video controls="controls" height="630" width="1008">
+<source src="/images/c4.mp4" type="video/mp4"/></video></p>
+<p>5.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+sizeof 的範例.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+char a;
+printf( " The size of int is %d \n", sizeof(int) );
+printf( " The size of char a is %d \n", sizeof(a) );
+}</pre>
+<p><img alt="" height="382" src="/images/6.PNG" width="700"/></p>
+<p><video controls="controls" height="630" width="1008">
+<source src="/images/c6.mp4" type="video/mp4"/></video></p>
+<p></p>
+<p>6.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+ Program 5 - for
+ ==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int i, j;
+i = 0; j = 10; /* 迴圈外先設定初值 */
+for ( ; i &lt; 6; )
+{
+printf( "i = %d, ", i );
+printf( "j = %d \n", j );
+i++;
+j++;
+}
+}
+</pre>
+<p><img alt="" height="209" src="/images/5.png" width="265"/></p>
+<p><video controls="controls" height="630" width="1008">
+<source src="/images/c2.mp4" type="video/mp4"/></video></p>
+<p>7.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
 switch - case 的範例 1.
 ==================== */
 #include &lt;stdio.h&gt;
 void main()
 {
-char c;
+char c ;
 printf( "Input a char:" );
 scanf( "%c", &amp;c );
 switch( c )
@@ -1910,15 +2004,52 @@ default:
 printf(" not a, b, c ");
 break;
 }
-  }
-
-
-</pre>
-<p><img alt="" height="248" src="/images/4.png" width="680"/></p>
-<p>5.</p>
+}</pre>
+<p><img alt="" height="185" src="/images/7.PNG" width="700"/></p>
 <p><video controls="controls" height="630" width="1008">
-<source src="/images/c2.mp4" type="video/mp4"/></video></p>
-<p></p><h1>Brython</h1>
+<source src="/images/c7.mp4" type="video/mp4"/></video></p>
+<p>8.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+Program "continue"
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int i;
+for( i = 0; i &lt; 10; i++ )
+{
+if( (i != 5) || (i != 6) || (i != 8) )
+{
+continue; /* 忽略以後的 program, 回到 for. */
+}
+printf( "i = %d\n ", i );
+}
+}</pre>
+<p><video controls="controls" height="630" width="1008">
+<source src="/images/c8.mp4" type="video/mp4"/></video></p>
+<p>9.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int x, y;
+
+    for (x = 1; x &lt;= 9; x++)
+    {
+        for (y = 1; y &lt;= 9; y++)
+        {
+            printf("%d ", x * y);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}</pre>
+<p><img alt="" height="231" src="/images/9.PNG" width="275"/></p>
+<p><video controls="controls" height="630" width="1008">
+<source src="/images/c9.mp4" type="video/mp4"/></video></p>
+<p></p>
+<p>10.</p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
