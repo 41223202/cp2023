@@ -377,7 +377,390 @@ int main()
 }</pre>
 <p><img alt="" height="63" src="./../images/20.PNG" width="237"/></p>
 <p><video controls="controls" height="630" width="1008">
-<source src="./../images/c20.mp4" type="video/mp4"/></video></p><br />程式練習二 << <a href='程式練習二.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
+<source src="./../images/c20.mp4" type="video/mp4"/></video></p>
+<p>1.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+
+/* Program to show array use */
+int main() {
+    int arr1[8]; /* 定义一个包含 8 个整数的数组 */
+    int i;
+
+    printf("Enter 8 integer numbers:\n");
+
+    for (i = 0; i &lt; 8; i++) {
+        scanf("%d", &amp;arr1[i]); /* 读取输入并存储在 arr1[i] 中 */
+    }
+
+    printf("Your 8 numbers are:\n");
+
+    for (i = 0; i &lt; 8; i++) {
+        printf("%d ", arr1[i]); /* 输出数组中的元素 */
+    }
+
+    printf("\n");
+
+    return 0; /* 返回零，表示程序成功执行 */
+}
+</pre>
+<p><img alt="" height="294" src="./../images/i13.PNG" width="600"/></p>
+<p>2.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+/* 程序演示了字符串操作 strlen、strcpy、strcat、strcmp */
+int main() {
+    char borrow[7] = {'b', 'o', 'r', 'r', 'o', 'w', '\0'};
+    char string1[32] = "This is string1";
+    char string2[16] = "This is string2";
+    char string3[16];
+    int len;
+
+    /* 输出字符串的长度 */
+    len = strlen(string1);
+    printf("strlen(string1): %d\n", len);
+    len = strlen(string2);
+    printf("strlen(string2): %d\n", len);
+    len = strlen(string3);
+    printf("strlen(string3): %d\n", len);
+
+    /* 将 string1 复制到 string3 */
+    strcpy(string3, string1);
+    printf("strcpy(string3, string1): %s\n", string3);
+    len = strlen(string3);
+    printf("strlen(string3) after copy of string1 into string3: %d\n", len);
+
+    /* 比较 string1 和 string3（它们应该相同）*/
+    if (strcmp(string1, string3) == 0)
+        printf("Strings are the same\n");
+
+    /* 连接 string1 和 string2 */
+    strcat(string1, string2);
+    printf("strcat(string1, string2): %s\n", string1);
+
+    /* 连接后的 string1 的总长度 */
+    len = strlen(string1);
+    printf("strlen(string1) after concatenation of string2 onto string1: %d\n", len);
+
+    printf("String as predefined quoted chars: %s\n", borrow);
+
+    return 0;
+}
+</pre>
+<p><img alt="" height="305" src="./../images/i14.PNG" width="600"/></p>
+<p>3.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* Function which returns an answer */
+/* Finds the pupil in one year of the school with the highest marks */
+
+#include &lt;stdio.h&gt;
+
+/* 声明一个函数，该函数接受一个 double 类型的数组，并返回一个 double 类型的值 */
+double getmarks(double pupils[]);
+
+int main() {
+    double pupil;
+
+    /* 预设学生的成绩数组 */
+    double marks[] = {10.6, 23.7, 67.9, 93.0, 64.2, 33.8, 57.5, 82.2, 50.7, 45.7};
+
+    /* 调用函数 getmarks。该函数返回最高分，将其存储在 pupil 变量中 */
+    pupil = getmarks(marks);
+
+    printf("Max mark is = %f", pupil);
+
+    return 0;
+}
+
+/* 定义函数 getmarks */
+double getmarks(double pupils[]) {
+    int i;
+    double highest;
+
+    highest = 0;
+
+    /* 遍历所有学生的成绩，存储最高分 */
+    for (i = 0; i &lt; 10; ++i) {
+        if (highest &lt; pupils[i]) {
+            highest = pupils[i];
+        }
+    }
+
+    /* 将最高分的值返回到调用函数的地方 */
+    return highest;
+}
+</pre>
+<p><img alt="" height="296" src="./../images/i15.PNG" width="600"/></p>
+<p>4.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+/* 说明了常见三角函数的用法 */
+int main() {
+    #define PI 3.14159265
+    double angle, radianno, answer;
+
+    /* 余弦函数 */
+    printf("cosine function:\n ");
+    printf("Please enter angle in degrees:\n ");
+    scanf("%lf", &amp;angle);
+    printf("You entered %lf\n", angle);
+    radianno = angle * (2 * PI / 360);
+    answer = cos(radianno);
+    printf("cos of %lf is %lf\n", angle, answer);
+
+    /* 正弦函数 */
+    printf("sine function:\n ");
+    printf("Please enter angle in degrees:\n ");
+    scanf("%lf", &amp;angle);
+    printf("You entered %lf\n", angle);
+    radianno = angle * (2 * PI / 360);
+    answer = sin(radianno);
+    printf("sin of %lf is %lf\n", angle, answer);
+
+    /* 正切函数 */
+    printf("tangent function:\n ");
+    printf("Please enter angle in degrees:\n ");
+    scanf("%lf", &amp;angle);
+    printf("You entered %lf\n", angle);
+    radianno = angle * (2 * PI / 360);
+    answer = tan(radianno);
+    printf("tan of %lf is %lf\n", angle, answer);
+
+    return 0;
+}
+</pre>
+<p><img alt="" height="297" src="./../images/i16.PNG" width="600"/></p>
+<p>5.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+/* 展示了使用 exp、log 和 log10 函数 */
+int main() {
+    double answer, expno, natlog, lb10;
+
+    /* 计算输入数字的指数 */
+    printf("exponential function:\n ");
+    printf("Please enter number:\n ");
+    scanf("%lf", &amp;expno);
+    printf("You entered %lf\n", expno);
+    answer = exp(expno);
+    printf("exponential of %lf is %lf\n", expno, answer);
+
+    /* 计算输入数字的自然对数 */
+    printf("natural logarithm function:\n ");
+    printf("Please enter number:\n ");
+    scanf("%lf", &amp;natlog);
+    printf("You entered %lf\n", natlog);
+    answer = log(natlog);
+    printf("natural logarithm of %lf is %lf\n", natlog, answer);
+
+    /* 计算输入数字的以10为底的对数 */
+    printf("log to base 10 function:\n ");
+    printf("Please enter number:\n ");
+    scanf("%lf", &amp;lb10);
+    printf("You entered %lf\n", lb10);
+    answer = log10(lb10);
+    printf("log to base 10 of %lf is %lf\n", lb10, answer);
+
+    return 0;
+}
+</pre>
+<p><img alt="" height="302" src="./../images/i17.PNG" width="600"/></p>
+<p>6.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+/* 展示了使用 pow、sqrt 和 fabs 函数 */
+int main() {
+    double answer, pownum, power, sqroot, fabsno;
+
+    /* 计算 x 的 y 次方 */
+    printf("power:\n ");
+    printf("Please enter number:\n ");
+    scanf("%lf", &amp;pownum);
+    printf("You entered %lf\n", pownum);
+    printf("Please enter power:\n ");
+    scanf("%lf", &amp;power);
+    printf("You entered %lf\n", power);
+    answer = pow(pownum, power);
+    printf("%lf raised to power %lf is %lf\n", pownum, power, answer);
+
+    /* 计算数字的平方根 */
+    printf("square root:\n ");
+    printf("Please enter number:\n ");
+    scanf("%lf", &amp;sqroot);
+    printf("You entered %lf\n", sqroot);
+    answer = sqrt(sqroot);
+    printf("The square root of %lf is %lf\n", sqroot, answer);
+
+    /* 计算数字的绝对值 */
+    printf("absolute value:\n ");
+    printf("Please enter number:\n ");
+    scanf("%lf", &amp;fabsno);
+    printf("You entered %lf\n", fabsno);
+    answer = fabs(fabsno);
+    printf("The absolute value of %lf is %lf\n", fabsno, answer);
+
+    return 0;
+}
+</pre>
+<p><img alt="" height="296" src="./../images/i18.PNG" width="600"/></p>
+<p>7.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* Structure example program */
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+/* 定义结构体 */
+struct Student {
+    int id;
+    char name[16];
+    double percent;
+};
+
+int main() {
+    /* 定义两个结构体类型的变量 s1 和 s2 */
+    struct Student s1, s2;
+
+    /* 为结构体 s1 赋值 */
+    s1.id = 56;
+    strcpy(s1.name, "Rob Smith");
+    s1.percent = 67.4;
+
+    /* 打印结构体 s1 的值 */
+    printf("\nid : %d", s1.id);
+    printf("\nName : %s", s1.name);
+    printf("\nPercent : %lf", s1.percent);
+
+    /* 为结构体 s2 赋值 */
+    s2.id = 73;
+    strcpy(s2.name, "Mary Gallagher");
+    s2.percent = 93.8;
+
+    /* 打印结构体 s2 的值 */
+    printf("\nid : %d", s2.id);
+    printf("\nName : %s", s2.name);
+    printf("\nPercent : %lf", s2.percent);
+
+    return 0;
+}
+</pre>
+<p><img alt="" height="304" src="./../images/i19.PNG" width="600"/></p>
+<p>8.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+/* 演示使用 goto 语句 */
+int main()
+{
+    int i, testvalue;
+    testvalue = 2;
+
+    for (i = 0; i &lt; 10; i++) {
+        if (testvalue == 2)
+            goto error;
+    }
+
+    printf("Normal Exit from for loop\n");
+
+error:
+    printf("testvalue is %d\n", testvalue);
+
+    return 0;
+}
+</pre>
+<p><img alt="" height="286" src="./../images/i20.PNG" width="600"/></p>
+<p>9.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include&lt;stdio.h&gt;
+
+/* Define the structure */
+struct Student {
+    int id;
+    char name[16];
+    double percent;
+};
+
+int main() {
+    int i;
+
+    /* Define 5 data locations of type "student" */
+    struct Student year9[5];
+
+    /* Input values for each student */
+    for (i = 0; i &lt; 5; i++) {
+        /* Assign values to the structure */
+        printf("Enter student ID: ");
+        scanf("%d", &amp;year9[i].id);
+        
+        printf("Enter student name: ");
+        scanf("%s", year9[i].name);
+
+        printf("Enter student percent: ");
+        scanf("%lf", &amp;year9[i].percent);
+    }
+
+    /* Print out structure information for each student */
+    for (i = 0; i &lt; 5; i++) {
+        printf("\nID: %d", year9[i].id);
+        printf("\nName: %s", year9[i].name);
+        printf("\nPercent: %lf\n", year9[i].percent);
+    }
+
+    return 0;
+}
+</pre>
+<p><img alt="" height="298" src="./../images/i23.PNG" width="600"/>10.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char borrow[7] = {'b', 'o', 'r', 'r', 'o', 'w', '\0'};
+    char string1[32] = "This is string1";
+    char string2[16] = "This is string2";
+    char string3[16];
+    int len;
+
+    /* Print out the lengths of the strings */
+    len = strlen(string1);
+    printf("strlen(string1): %d\n", len);
+
+    len = strlen(string2);
+    printf("strlen(string2): %d\n", len);
+
+    len = strlen(string3);
+    printf("strlen(string3): %d\n", len);
+
+    /* Copy string1 into string3 */
+    strcpy(string3, string1);
+    printf("strcpy(string3, string1): %s\n", string3);
+
+    len = strlen(string3);
+    printf("strlen(string3) after copy of string1 into string3: %d\n", len);
+
+    /* Compare string1 and string3 (these should be the same) */
+    if (strcmp(string1, string3) == 0)
+        printf("strings are the same\n");
+
+    /* Concatenate string1 and string2 */
+    strcat(string1, string2);
+    printf("strcat(string1, string2): %s\n", string1);
+
+    /* Total length of string1 after concatenation */
+    len = strlen(string1);
+    printf("strlen(string1) after cat of string2 onto string1: %d\n", len);
+
+    printf("String as predefined quoted chars: %s\n", borrow);
+
+    return 0;
+}
+</pre>
+<p><img alt="" height="280" src="./../images/i24.PNG" width="600"/></p><br />程式練習二 << <a href='程式練習二.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
         
     <!-- footer -->
       <div class="container">
