@@ -1859,7 +1859,98 @@ int main() {
 </pre>
 <p><video controls="controls" height="630" width="1008">
 <source src="//images/positive negative"/></video></p>
-<h1>c_ex</h1>
+<p>15.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+void process(int arr[], int size, int (*callback)(int))
+{
+    for (int i = 0; i &lt; size; i++)
+    {
+        arr[i] = callback(arr[i]);
+    }
+}
+int square(int n)
+{
+    return n * n;
+}
+
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5, 6};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    printf("Array elements before processing: ");
+    for (int i = 0; i &lt; size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    process(arr, size, square);
+    printf("Square of the array elements after processing: ");
+    for (int i = 0; i &lt; size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}</pre>
+<p><img alt="" height="87" src="/images/function.PNG" width="640"/></p>
+<p>16.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef int( * compare_func_t)(const void * ,
+  const void * );
+void sort_array(int * arr, size_t n, compare_func_t compare) {
+  qsort(arr, n, sizeof(int), compare);
+}
+int ascending_order(const void * a,
+  const void * b) {
+  const int * ia = (const int * ) a;
+  const int * ib = (const int * ) b;
+  return ( * ia &gt; * ib) - ( * ia &lt; * ib);
+}
+
+int descending_order(const void * a,
+  const void * b) {
+  const int * ia = (const int * ) a;
+  const int * ib = (const int * ) b;
+  return ( * ib &gt; * ia) - ( * ib &lt; * ia);
+}
+int main() {
+  int arr[] = {
+    7,
+    2,
+    0,
+    5,
+    8,
+    9
+  };
+  size_t n = sizeof(arr) / sizeof(int);
+  printf("Original array: ");
+  for (size_t i = 0; i &lt; n; i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
+  sort_array(arr, n, ascending_order);
+  printf("\nAscending order: ");
+  for (size_t i = 0; i &lt; n; i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
+  sort_array(arr, n, descending_order);
+  printf("\nDescending order: ");
+  for (size_t i = 0; i &lt; n; i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
+  return 0;
+}</pre>
+<p><img alt="" height="146" src="/images/an_2.PNG" width="325"/></p>
+<p>17.</p>
+<p></p>
+<p>18.</p>
+<p>19.</p>
+<p>20.</p><h1>c_ex</h1>
 <p>1.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
 Logical NOT.
