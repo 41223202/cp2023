@@ -2,7 +2,7 @@
         <head>
         <title>cmsite</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -142,71 +142,242 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w7 << <a href='w7.html'>Previous</a> <a href='w13.html'>Next</a> >> w13<br /><h1>w11</h1>
+    <div id="tipue_search_content">程式練習二 << <a href='程式練習二.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython<br /><h1>W2~W5 Exercises</h1>
+<p>1.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-#include &lt;gd.h&gt;
-#include &lt;math.h&gt;
 
-int main() {
-    int width = 800;
-    int height = 600;
+void main()
+{
+    int i, j;
+    i = 0;
+    j = 10; /* 在迴圈外先設定初值 */
 
-    gdImagePtr img = gdImageCreateTrueColor(width, height);
-    gdImageAlphaBlending(img, 0);
+    // 使用 do-while 迴圈，先執行一次循環內的程式碼
+    do
+    {
+        printf("i = %d, ", i);
+        printf("j = %d \n", j);
 
-    FILE *outputFile = fopen("hellogd.png", "wb");
-    if (outputFile == NULL) {
+        // i 和 j 分別遞增
+        i++;
+        j++;
+    } while (i &lt; 6); /* 檢查條件的地方 */
+}</pre>
+<p><img alt="" height="166" src="./../images/11.PNG" width="194"/></p>
+<p><video controls="controls" height="630" width="1008">
+<source src="./../images/c11.mp4" type="video/mp4"/></video></p>
+<p>2.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
-fprintf(stderr, "Error opening the output file.\n");
+int main()
+{
+    int grade[5]; /* 大小為 5 的陣列 */
+    int i;
 
-return 1;
+    grade[0] = 75; /* 第一個元素 */
+    grade[1] = 80; /* 第二個元素 */
+    grade[2] = 85; /* 第三個元素 */
+    grade[3] = 70; /* 第四個元素 */
+    grade[4] = 90; /* 第五個元素 */
+
+    // 使用迴圈輸出陣列的元素
+    for (i = 0; i &lt; 5; i++)
+    {
+        printf("Number %d = %d\n", i, grade[i]);
     }
 
-    int red = gdImageColorAllocate(img, 255, 0, 0);
-    int blue = gdImageColorAllocate(img, 0, 0, 255);
-    int black = gdImageColorAllocate(img, 0, 0, 0);
-    int white = gdImageColorAllocate(img, 255, 255, 255);
-    // 長方形塗色
-    gdImageFilledRectangle(img, 0, 0, width, height, white);
-    gdImageFilledRectangle(img, 0, 0, (int)width/4, (int)height/4, blue);
-    // 橢圓形塗色
-    gdImageFilledEllipse(img, (int)width*3/4, (int)height/4, (int)width/4, (int)width/4, red);
-    // 橢圓形畫線
-    gdImageEllipse(img, (int)width*3/4, (int)height*3/4, (int)width/4, (int)width/4, red);
-    // 畫直線
-    gdImageLine(img, (int)width/2, (int)height/2, (int)width/2, (int)height/2 + 100, blue);
-
-    // 多邊形畫線
-    gdPoint points[4];
-    points[0].x = (int)width/4;
-    points[0].y = (int)height*3/4;
-    points[1].x = points[0].x + 100;
-    points[1].y = points[0].y;
-    points[2].x = points[1].x;
-    points[2].y = points[1].y + 100;
-    points[3].x = points[2].x - 100;
-    points[3].y = points[2].y;
-    gdImagePolygon(img, points, 4, black);
-
-    // 多邊形塗色
-    gdPoint points2[4];
-    points2[0].x = (int)width/3;
-    points2[0].y = (int)height/2;
-    points2[1].x = points2[0].x + 100;
-    points2[1].y = points2[0].y;
-    points2[2].x = points2[1].x;
-    points2[2].y = points2[1].y + 100;
-    points2[3].x = points2[2].x - 150;
-    points2[3].y = points2[2].y;
-    gdImageFilledPolygon(img, points2, 4, red);
-
-    gdImagePngEx(img, outputFile, 9);
-    fclose(outputFile);
-    gdImageDestroy(img);
     return 0;
 }</pre>
-<p><img alt="" height="300" src="./../images/hellogd.png" width="400"/></p>
-<br />w7 << <a href='w7.html'>Previous</a> <a href='w13.html'>Next</a> >> w13</div>
+<p></p>
+<p><img alt="" height="146" src="./../images/12.PNG" width="184"/></p>
+<p><video controls="controls" height="630" width="1008">
+<source src="./../images/c12.mp4" type="video/mp4"/></video></p>
+<p>3.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int array[3][3];
+    int x, y;
+
+    // 將數值分配給二維陣列中的每個元素
+    array[0][0] = 1;
+    array[0][1] = 2;
+    array[0][2] = 3;
+    array[1][0] = 4;
+    array[1][1] = 5;
+    array[1][2] = 6;
+    array[2][0] = 7;
+    array[2][1] = 8;
+    array[2][2] = 9;
+
+    // 使用巢狀迴圈遍歷二維陣列，並輸出每個元素的值
+    for (x = 0; x &lt; 3; x++)
+    {
+        for (y = 0; y &lt; 3; y++)
+        {
+            printf("%d,", array[x][y]);
+        }
+    }
+
+    return 0;
+}</pre>
+<p><img alt="" height="80" src="./../images/13.PNG" width="300"/></p>
+<p><video controls="controls" height="630" width="1008">
+<source src="./../images/c13.mp4" type="video/mp4"/></video></p>
+<p>4.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    char *s_pointer = "Hello";
+    char ch1, ch2;
+
+    ch1 = *s_pointer;
+    ch2 = s_pointer[0];
+
+    printf("%c, %c", ch1, ch2);
+
+    return 0;
+}
+</pre>
+<p><img alt="" height="70" src="./../images/14.PNG" width="200"/></p>
+<p><video controls="controls" height="630" width="1008">
+<source src="./../images/c14.mp4" type="video/mp4"/></video></p>
+<p>5.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+void main()
+{
+    char *str = "Eric";
+
+    // 透過指標運算存取字串中的各個字元並輸出
+    printf("%c", *(str + 0)); /* 也可寫 printf("%c", str[0]); */
+    printf("%c", *(str + 1)); /* 也可寫 printf("%c", str[1]); */
+    printf("%c", *(str + 2)); /* 也可寫 printf("%c", str[2]); */
+    printf("%c", *(str + 3)); /* 也可寫 printf("%c", str[3]); */
+}</pre>
+<p><img alt="" height="67" src="./../images/15.PNG" width="230"/></p>
+<p><video controls="controls" height="630" width="1008">
+<source src="./../images/c15.mp4" type="video/mp4"/></video></p>
+<p>6.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int *pointer_a, a;
+
+    // 將指標 pointer_a 指向變數 a 的位址
+    pointer_a = &amp;a;
+
+    // 將變數 a 賦值為 10
+    a = 10;
+
+    // 輸出變數 a 的值和指標 pointer_a 所指向的值
+    printf("%d, %d", a, *pointer_a);
+
+    return 0;
+}</pre>
+<p><img alt="" height="75" src="./../images/16.PNG" width="191"/></p>
+<p><video controls="controls" height="630" width="1008">
+<source src="./../images/c16.mp4" type="video/mp4"/></video></p>
+<p>7.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+/* 定義一個結構 Mouse */
+struct Mouse
+{
+    int xPos, yPos;
+    char Name[10];
+};
+
+/* 主函數 */
+int main()
+{
+    /* 創建一個 Mouse 結構的實例 myMouse */
+    struct Mouse myMouse;
+
+    /* 給結構成員賦值 */
+    myMouse.xPos = 10;
+    myMouse.yPos = 20;
+    strcpy(myMouse.Name, "Micky");
+
+    /* 輸出結構成員的值 */
+    printf("Name: %s, X: %d, Y: %d", myMouse.Name, myMouse.xPos, myMouse.yPos);
+
+    return 0;
+}
+</pre>
+<p><img alt="" height="78" src="./../images/17.PNG" width="386"/></p>
+<p><video controls="controls" height="630" width="1008">
+<source src="./../images/c17.mp4" type="video/mp4"/></video></p>
+<p>8.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">include &lt;stdio.h&gt;
+
+/* 定義一個共用體 Record1 */
+union Record1
+{
+    int xPos, yPos;
+    char ch;
+};
+
+/* 主函數 */
+int main()
+{
+    /* 創建一個 Record1 共用體的實例 R1 */
+    union Record1 R1;
+
+    /* 將 xPos 成員賦值為 66 */
+    R1.xPos = 66;
+
+    /* 由於共用體的所有成員共享同一塊記憶體，因此 yPos 和 ch 也會被賦值為 66 */
+    printf("xPos=%d, yPos=%d, ch=%c", R1.xPos, R1.yPos, R1.ch);
+
+    return 0;
+}</pre>
+<p><img alt="" height="73" src="./../images/18.PNG" width="350"/></p>
+<p><video controls="controls" height="630" width="1008">
+<source src="./../images/c18.mp4" type="video/mp4"/></video></p>
+<p>9.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+/* 定義一個函數 Hello，該函數打印 "Hello" */
+void Hello(void)
+{
+    printf(" Hello ");
+}
+
+/* 主函數 */
+int main()
+{
+    void (*func)(void); /* 宣告一個函數指標 */
+
+    func = Hello; /* 將 Hello 函數的位址指派給 func */
+
+    func(); /* 使用函數指標呼叫 Hello 函數 */
+
+    return 0;
+}
+</pre>
+<p><img alt="" height="75" src="./../images/19.PNG" width="214"/></p>
+<p><video controls="controls" height="630" width="1008">
+<source src="./../images/c19.mp4" type="video/mp4"/></video></p>
+<p>10.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+
+#define ONE 1
+#define TWO 2
+#define HELLO "hello"
+
+int main()
+{
+    printf("%d, %d, %s", ONE, TWO, HELLO);
+    return 0;
+}</pre>
+<p><img alt="" height="63" src="./../images/20.PNG" width="237"/></p>
+<p><video controls="controls" height="630" width="1008">
+<source src="./../images/c20.mp4" type="video/mp4"/></video></p><br />程式練習二 << <a href='程式練習二.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
         
     <!-- footer -->
       <div class="container">
