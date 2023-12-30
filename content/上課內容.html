@@ -142,221 +142,322 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">c_ex << <a href='c_ex.html'>Previous</a> <a href='W2~W5 Exercises.html'>Next</a> >> W2~W5 Exercises<br /><h1>程式練習二</h1>
+    <div id="tipue_search_content">ANSIC << <a href='ANSIC.html'>Previous</a> <a href='程式練習一.html'>Next</a> >> 程式練習一<br /><h1>上課內容</h1>
 <p>1.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
-Logical NOT.
-==================== */
-#include &lt;stdio.h&gt;
-void main()
-{
-int a;
-a = 3;
-printf("%d\n", !a );
-a = 0;
-printf("%d\n", !a );
-}</pre>
-<p><img alt="" height="88" src="./../images/1.PNG" width="200"/></p>
-<p><video controls="controls" height="630" width="1008">
-<source src="./../images/c5.mp4" type="video/mp4"/></video></p>
-<p>2.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
-基本運算範例.
-==================== */
-#include&lt;stdio.h&gt;
-int main()
-{
-int a,b;
-a = 10; b = 3;
-printf( "%d \n", a * b );
-printf( "%d \n", a / b );
-printf( "%d \n", a + b );
-printf( "%d \n", a - b );
-printf( "%d \n", a % b );
-return 0;
-}</pre>
-<p><img alt="" height="166" src="./../images/1.png" width="250"/></p>
-<p><video controls="controls" height="630" width="1008">
-<source src="./../images/c1.mp4" type="video/mp4"/></video><br/><br/></p>
-<p>3.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
-關係運算元的範例.
-==================== */
-#include &lt;stdio.h&gt;
-int main()
-{
-int a = 10, b = 5;
-printf( " a == b is %d \n", a == b );
-printf( " a &gt; b is %d \n", a &gt; b );
-printf( " a &lt; b is %d \n", a &lt; b );
-printf( " a &gt;= b is %d \n", a &gt;= b );
-printf( " a &lt;= b is %d \n", a &lt;= b );
-printf( " a != b is %d \n", a != b );
-printf( "\n" );
-b = 10;
-printf( " a == b is %d \n", a == b );
-printf( " a &gt; b is %d \n", a &gt; b );
-printf( " a &lt; b is %d \n", a &lt; b );
-printf( " a &gt;= b is %d \n", a &gt;= b );
-printf( " a &lt;= b is %d \n", a &lt;= b );
-printf( " a != b is %d \n", a != b );
-return 0;
-}</pre>
-<p><img alt="" height="365" src="./../images/2.png" width="250"/></p>
-<p><video controls="controls" height="630" width="1008">
-<source src="./../images/c3.mp4" type="video/mp4"/></video></p>
-<p></p>
-<p>4.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
-位元運算元的範例.
-==================== */
-#include&lt;stdio.h&gt;
-void main()
-{
-int a,b;
-a = 15;
-b = 1;
-printf("%d \n", a | b ); /* a OR b */
-printf("%d \n", a &amp; b ); /* a AND b */
-printf("%d \n", a ^ b ); /* a XOR b */
-printf("%d \n", a &lt;&lt; 1 ); /* a 位元左移 1 位 */
-printf("%d \n", a &gt;&gt; 1 ); /* a 位元右移一位 */
-printf("%d \n", ~a ); /* A 的補數運算 */
-}</pre>
-<p><img alt="" height="192" src="./../images/3.png" width="265"/><br/><br/></p>
-<p><video controls="controls" height="630" width="1008">
-<source src="./../images/c4.mp4" type="video/mp4"/></video></p>
-<p>5.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
-sizeof 的範例.
-==================== */
-#include &lt;stdio.h&gt;
-void main()
-{
-char a;
-printf( " The size of int is %d \n", sizeof(int) );
-printf( " The size of char a is %d \n", sizeof(a) );
-}</pre>
-<p><img alt="" height="382" src="./../images/6.PNG" width="700"/></p>
-<p><video controls="controls" height="630" width="1008">
-<source src="./../images/c6.mp4" type="video/mp4"/></video></p>
-<p></p>
-<p>6.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
- Program 5 - for
- ==================== */
-#include &lt;stdio.h&gt;
-void main()
-{
-int i, j;
-i = 0; j = 10; /* 迴圈外先設定初值 */
-for ( ; i &lt; 6; )
-{
-printf( "i = %d, ", i );
-printf( "j = %d \n", j );
-i++;
-j++;
-}
-}
-</pre>
-<p><img alt="" height="209" src="./../images/5.png" width="265"/></p>
-<p><video controls="controls" height="630" width="1008">
-<source src="./../images/c2.mp4" type="video/mp4"/></video></p>
-<p>7.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
-switch - case 的範例 1.
-==================== */
-#include &lt;stdio.h&gt;
-void main()
-{
-char c ;
-printf( "Input a char:" );
-scanf( "%c", &amp;c );
-switch( c )
-{
-case 'a':
-printf(" you pressed a ");
-break;
-case 'b':
-printf(" you pressed b ");
-break;
-case 'c':
-printf(" you pressed c ");
-break;
-default:
-printf(" not a, b, c ");
-break;
-}
-}</pre>
-<p><img alt="" height="185" src="./../images/7.PNG" width="700"/></p>
-<p><video controls="controls" height="630" width="1008">
-<source src="./../images/c7.mp4" type="video/mp4"/></video></p>
-<p>8.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
-Program "continue"
-==================== */
-#include &lt;stdio.h&gt;
-void main()
-{
-int i;
-for( i = 0; i &lt; 10; i++ )
-{
-if( (i != 5) || (i != 6) || (i != 8) )
-{
-continue; /* 忽略以後的 program, 回到 for. */
-}
-printf( "i = %d\n ", i );
-}
-}</pre>
-<p><video controls="controls" height="630" width="1008">
-<source src="./../images/c8.mp4" type="video/mp4"/></video></p>
-<p>9.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
-int main()
+int main() 
 {
-    int x, y;
+    // 声明并初始化字符变量
+    char char1 = 'X';
+    char char2 = 'M';
+    char char3 = 'L';
 
-    for (x = 1; x &lt;= 9; x++)
-    {
-        for (y = 1; y &lt;= 9; y++)
+    // 打印原始和反转字符
+    printf("The reverse of %c%c%c is %c%c%c\n",
+        char1, char2, char3,
+        char3, char2, char1);
+
+    return(0);
+}</pre>
+<p><video controls="controls" height="630" width="1008">
+<source src="./../images/reverse.mp4" type="video/mp4"/></video></p>
+<p>2.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+    int j, numbers[5], total=0; // 声明循环计数器、一个包含五个数字的数组以及总和变量
+
+    // 提示用户输入五个数字，并将它们存储在数组中
+    printf("\n輸入第一個數字："); 
+    scanf("%d", &amp;numbers[0]);
+    printf("\n輸入第二個數字："); 
+    scanf("%d", &amp;numbers[1]);
+    printf("\n輸入第三個數字："); 
+    scanf("%d", &amp;numbers[2]);
+    printf("\n輸入第四個數字："); 
+    scanf("%d", &amp;numbers[3]);
+    printf("\n輸入第五個數字："); 
+    scanf("%d", &amp;numbers[4]);
+
+    // 通过循环遍历这些数字，找到并计算奇数的总和
+    for(j = 0; j &lt; 5; j++) {
+        if((numbers[j] % 2) != 0) 
         {
-            printf("%d ", x * y);
-        }
-        printf("\n");
+            total += numbers[j];
+        }   
+    }
+
+    // 打印奇數總和
+    printf("\n所有奇數的總和：%d", total);
+    printf("\n");
+
+    return 0;
+}
+</pre>
+<p><video controls="controls" height="630" width="1008">
+<source src="./../images/all odd.mp4" type="video/mp4"/></video></p>
+<p></p>
+<p></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">3.</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+    float x, y, z, P; // 声明變量以存儲三角形的三邊長和周長
+
+    // 提示用戶輸入三個數字，分別存儲在 'x'、'y' 和 'z'
+    printf("\n輸入第一個數字："); 
+    scanf("%f", &amp;x);
+    printf("\n輸入第二個數字：");
+    scanf("%f", &amp;y);
+    printf("\n輸入第三個數字：");
+    scanf("%f", &amp;z);
+
+    if (x &lt; (y + z) &amp;&amp; y &lt; (x + z) &amp;&amp; z &lt; (x + y)) // 檢查這三個數字是否能構成一個三角形
+    {  
+        P = x + y + z; // 計算周長
+        printf("\n周長 = %.1f\n", P); // 輸出周長	 
+    }
+    else
+    {
+        printf("無法構成三角形..！"); // 如果無法構成三角形，輸出相應的消息
     }
 
     return 0;
-}</pre>
-<p><img alt="" height="231" src="./../images/9.PNG" width="275"/></p>
+}
+
+</pre>
 <p><video controls="controls" height="630" width="1008">
-<source src="./../images/c9.mp4" type="video/mp4"/></video></p>
-<p></p>
-<p>10.</p>
+<source src="./../images/triangle.mp4" type="video/mp4"/></video></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">4.</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    // 宣告變數和指標
+    int fno, sno, *ptr, *qtr, sum;
+
+    // 提示用戶輸入第一個數字
+    printf("\n\n Pointer : Add two numbers :\n");
+    printf("--------------------------------\n");
+
+    printf(" 輸入第一個數字 : ");
+    scanf("%d", &amp;fno);
+
+    // 提示用戶輸入第二個數字
+    printf(" 輸入第二個數字 : ");
+    scanf("%d", &amp;sno);
+
+    // 指向第一個數字的指標
+    ptr = &amp;fno;
+
+    // 指向第二個數字的指標
+    qtr = &amp;sno;
+
+    // 計算兩數的總和
+    sum = *ptr + *qtr;
+
+    // 輸出總和
+    printf(" 輸入的兩個數字的總和 : %d\n\n", sum);
+
+    return 0;
+}</pre>
+<p><img alt="" height="40" src="./../images/add.PNG" width="200"/><br/><br/><br/></p>
+<p>5.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+// 函數原型
+int calculateLength(char*);
+
+void main() 
+{
+    char str1[25];
+    int l;
+
+    printf("\n\n 指針：計算字符串的長度：\n"); 
+    printf("---------------------------------------------------\n");
+
+    // 輸入一個字符串
+    printf(" 輸入一個字符串：");
+    fgets(str1, sizeof str1, stdin);
+
+    // 計算字符串的長度
+    l = calculateLength(str1);
+
+    // 輸出字符串的長度
+    printf(" 給定字符串 %s 的長度是：%d ", str1, l - 1);
+    printf("\n\n");
+}
+
+// 函數，用於計算字符串的長度
+int calculateLength(char* ch)
+{
+    int ctr = 0;
+
+    // 通過迭代字符直到遇到空字符
+    while (*ch != '\0') 
+    {
+        ctr++;
+        ch++;
+    }
+
+    return ctr;
+}
+</pre>
+<p></p>
+<p><img alt="" height="38" src="./../images/calculate.PNG" width="200"/></p>
+<p>6.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"># include &lt;stdio.h&gt;
+# include &lt;string.h&gt;
+
+int main()
+{
+    int n, x = 0;
+    
+    printf("\n\n 檢查給定數字是否是醜數:\n");
+    printf("----------------------------------------------------\n");
+    
+    // 輸入一個整數
+    printf(" 輸入一個整數: ");
+    scanf("%d", &amp;n);
+
+    if (n &lt;= 0) 
+    {  
+        printf("請輸入正確的數字.");  
+    }
+    
+    while (n != 1) 
+    {  
+        if (n % 5 == 0) 
+        {  
+            n /= 5;  
+        } 
+        else if (n % 3 == 0) 
+        {  
+            n /= 3;  
+        } 
+        else if (n % 2 == 0) 
+        {  
+            n /= 2;  
+        } 
+        else 
+        {  
+            printf("它不是一個醜數.\n"); 
+            x = 1;  
+            break;  
+        }  
+    } 
+    
+    if (x == 0) 
+    { 
+        printf("它是一個醜數.\n");
+    }
+
+    return 0; // 返回 0，表示正常結束程序
+}
+</pre>
+<p></p>
+<p><img alt="" height="216" src="./../images/number.PNG" width="300"/></p>
+<p>7.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // 包含標準輸入/輸出頭文件。
 
 void main()
 {
-    int i, j;
-    i = 0;
-    j = 10; /* 在迴圈外先設定初值 */
+    int num1, rem1;  // 声明两个整数变量 'num1' 和 'rem1'。
 
-    // 使用 while 迴圈，當 i 小於 6 時執行迴圈內部的程式碼
-    while (i &lt; 6)
-    {
-        printf("i = %d, ", i);
-        printf("j = %d \n", j);
-
-        // i 和 j 分別遞增
-        i++;
-        j++;
-    }
-}</pre>
+    printf("輸入一個整數: ");  // 提示用戶輸入一個整數。
+    scanf("%d", &amp;num1);  // 讀取並將用戶輸入的值存儲在 'num1' 中。
+    rem1 = num1 % 2;  // 計算 'num1' 除以 2 的餘數。
+    if (rem1 == 0)  // 檢查餘數是否等於 0。
+        printf("%d 是一個偶數\n", num1);  // 打印一條消息，指示 'num1' 是一個偶數。
+    else
+        printf("%d 是一個奇數\n", num1);  // 打印一條消息，指示 'num1' 是一個奇數。
+}
+</pre>
 <p></p>
-<p><img alt="" height="161" src="./../images/10.PNG" width="190"/></p>
-<p><video controls="controls" height="630" width="1008">
-<source src="./../images/c10.mp4" type="video/mp4"/></video></p>
-<br />c_ex << <a href='c_ex.html'>Previous</a> <a href='W2~W5 Exercises.html'>Next</a> >> W2~W5 Exercises</div>
+<p><img alt="" height="59" src="./../images/odd.PNG" width="186"/></p>
+<p>8.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // 包含標準輸入/輸出頭文件。
+
+void main()
+{
+    int co1, co2;  // 声明两个整数变量 'co1' 和 'co2' 來存儲座標。
+
+    printf("輸入X和Y坐標的值：");  // 提示用戶輸入座標。
+    scanf("%d %d", &amp;co1, &amp;co2);  // 讀取並將用戶輸入的值存儲在 'co1' 和 'co2' 中。
+
+    if (co1 &gt; 0 &amp;&amp; co2 &gt; 0)  // 檢查 'co1' 和 'co2' 是否都是正數。
+        printf("該座標點（%d,%d）位於第一象限。\n", co1, co2);  // 打印一條消息，指示該座標位於第一象限。
+    else if (co1 &lt; 0 &amp;&amp; co2 &gt; 0)  // 檢查 'co1' 是否為負數並且 'co2' 是否為正數。
+        printf("該座標點（%d,%d）位於第二象限。\n", co1, co2);  // 打印一條消息，指示該座標位於第二象限。
+    else if (co1 &lt; 0 &amp;&amp; co2 &lt; 0)  // 檢查 'co1' 和 'co2' 是否都是負數。
+        printf("該座標點（%d, %d）位於第三象限。\n", co1, co2);  // 打印一條消息，指示該座標位於第三象限。
+    else if (co1 &gt; 0 &amp;&amp; co2 &lt; 0)  // 檢查 'co1' 是否為正數並且 'co2' 是否為負數。
+        printf("該座標點（%d,%d）位於第四象限。\n", co1, co2);  // 打印一條消息，指示該座標位於第四象限。
+    else if (co1 == 0 &amp;&amp; co2 == 0)  // 檢查 'co1' 和 'co2' 是否都是零。
+        printf("該座標點（%d,%d）位於原點。\n", co1, co2);  // 打印一條消息，指示該座標位於原點。
+}
+</pre>
+<p><img alt="" height="199" src="./../images/quadrant.PNG" width="366"/></p>
+<p>9.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;    // 包含標準輸入/輸出頭文件。
+#include &lt;stdlib.h&gt;   // 包含標準庫頭文件。
+#include &lt;time.h&gt;     // 包含時間頭文件，用於生成隨機數。
+
+int main()           // 主函數的開始。
+{
+    int number, input;   // 声明兩個整數變量 'number' 和 'input'。
+
+    srand(time(NULL));   // 使用當前時間初始化隨機種子。
+
+    number = rand() % 10 + 1;   // 生成一個介於1到10之間的隨機數並將其存儲在 'number' 中。
+
+    do {   // 開始一個 do-while 循環。
+        printf("\n猜數字 (1 到 10): ");   // 打印一條消息，提示用戶猜數字。
+        scanf("%d", &amp;input);    // 讀取用戶的輸入並將其存儲在 'input' 中。
+
+        if (number &gt; input)   // 如果隨機數大於用戶的輸入。
+            printf("數字較大\n");   // 打印一條消息，指示數字較大。
+
+    } while (number != input);   // 只要用戶的輸入不等於隨機數，就繼續循環。
+
+    printf("答對了！\n\n");   // 打印一條消息，指示用戶猜對了。
+
+    return 0;   // 返回 0，表示程序運行成功。
+}   // 主函數的結尾。
+</pre>
+<p><img alt="" height="162" src="./../images/random.PNG" width="200"/></p>
+<p>10.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;time.h&gt;    // 包含時間頭文件。
+#include &lt;stdio.h&gt;   // 包含標準輸入/輸出頭文件。
+#include &lt;stdlib.h&gt;  // 包含標準庫頭文件。
+
+int main(void)
+{
+    time_t cur_time;      // 声明一個 time_t 類型的變量 'cur_time' 用於存儲當前時間。
+    char* cur_t_string;   // 声明一個字符指針 'cur_t_string' 用於存儲轉換後的時間字符串。
+
+    cur_time = time(NULL);   // 獲取當前的日期和時間。
+    if (cur_time == ((time_t)-1))
+    {
+        (void) fprintf(stderr, "無法獲取當前日期和時間。\n");
+        exit(EXIT_FAILURE);   // 如果獲取失敗，輸出錯誤消息並退出程序。
+    }
+
+    cur_t_string = ctime(&amp;cur_time);   // 將時間轉換為本地時間格式的字符串。
+    if (cur_t_string == NULL)
+    {
+        (void) fprintf(stderr, "無法轉換當前日期和時間。\n");
+        exit(EXIT_FAILURE);   // 如果轉換失敗，輸出錯誤消息並退出程序。
+    }
+
+    (void) printf("\n 當前時間是：%s \n", cur_t_string);   // 打印當前的日期和時間字符串。
+
+    exit(EXIT_SUCCESS);   // 退出程序，表示成功執行。
+}
+</pre>
+<p><img alt="" height="67" src="./../images/time.PNG" width="300"/></p>
+<br />ANSIC << <a href='ANSIC.html'>Previous</a> <a href='程式練習一.html'>Next</a> >> 程式練習一</div>
         
     <!-- footer -->
       <div class="container">

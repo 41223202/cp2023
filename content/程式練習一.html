@@ -2,7 +2,7 @@
         <head>
         <title>cmsite</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -142,284 +142,384 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w6 << <a href='w6.html'>Previous</a> <a href='w11.html'>Next</a> >> w11<br /><h1>w7</h1>
-<p></p>
+    <div id="tipue_search_content">上課內容 << <a href='上課內容.html'>Previous</a> <a href='c_ex.html'>Next</a> >> c_ex<br /><h1>程式練習一</h1>
+<p>1.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-#include &lt;gd.h&gt;
-#include &lt;math.h&gt;
+#include &lt;stdlib.h&gt;
 
-void draw_chinese_flag(gdImagePtr img);
+void main()
+{
+    int fno, sno, *ptr1 = &amp;fno, *ptr2 = &amp;sno;
+
+    printf("\n\n 指針：找出兩個數字之間的最大值：\n");
+    printf("------------------------------------------------------------\n");
+
+    printf(" 輸入第一個數字：");
+    scanf("%d", ptr1);
+    printf(" 輸入第二個數字：");
+    scanf("%d", ptr2);
+
+    if (*ptr1 &gt; *ptr2)
+    {
+        printf("\n\n %d 是最大的數字。\n\n", *ptr1);
+    }
+    else
+    {
+        printf("\n\n %d 是最大的數字。\n\n", *ptr2);
+    }
+}
+</pre>
+<p><img alt="" height="79" src="./../images/two.PNG" width="200"/></p>
+<p>2.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define __STDC_WANT_LIB_EXT1__ 1
+#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+
+int main(void)
+{
+    time_t t = time(NULL);  // 獲取當前時間的秒數，存儲在變數 't' 中。
+
+    printf("\n 表達為協調世界時的日曆時間是：");
+    printf("\n UTC:   %s", asctime(gmtime(&amp;t)));  // 使用 'gmtime' 將時間轉換為 UTC 時間，然後使用 'asctime' 打印。
+
+    printf(" 本地時間: %s\n", asctime(localtime(&amp;t)));  // 使用 'localtime' 將時間轉換為本地時間，然後使用 'asctime' 打印。
+
+#ifdef __STDC_LIB_EXT1__
+    struct tm buf;
+    char str[26];
+
+    asctime_s(str, sizeof str, gmtime_s(&amp;t, &amp;buf));  // 安全版本：使用 'gmtime_s' 將時間轉換為 UTC 時間，然後使用 'asctime_s' 打印。
+    printf(" UTC:   %s", str);
+
+    asctime_s(str, sizeof str, localtime_s(&amp;t, &amp;buf));  // 安全版本：使用 'localtime_s' 將時間轉換為本地時間，然後使用 'asctime_s' 打印。
+    printf(" 本地時間: %s", str);
+#endif
+}
+</pre>
+<p><img alt="" height="82" src="./../images/universal.PNG" width="400"/></p>
+<p>3.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define __STDC_WANT_LIB_EXT1__ 1
+#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+
+int main(void)
+{
+    time_t t = time(NULL);  // 獲取當前時間的秒數，存儲在變數 't' 中。
+
+    printf("\n 表達為協調世界時的日曆時間是：");
+    printf("\n UTC:   %s", asctime(gmtime(&amp;t)));  // 使用 'gmtime' 將時間轉換為 UTC 時間，然後使用 'asctime' 打印。
+
+    printf(" 本地時間: %s\n", asctime(localtime(&amp;t)));  // 使用 'localtime' 將時間轉換為本地時間，然後使用 'asctime' 打印。
+
+#ifdef __STDC_LIB_EXT1__
+    struct tm buf;
+    char str[26];
+
+    asctime_s(str, sizeof str, gmtime_s(&amp;t, &amp;buf));  // 安全版本：使用 'gmtime_s' 將時間轉換為 UTC 時間，然後使用 'asctime_s' 打印。
+    printf(" UTC:   %s", str);
+
+    asctime_s(str, sizeof str, localtime_s(&amp;t, &amp;buf));  // 安全版本：使用 'localtime_s' 將時間轉換為本地時間，然後使用 'asctime_s' 打印。
+    printf(" 本地時間: %s", str);
+#endif
+}
+</pre>
+<p><img alt="" height="44" src="./../images/centugrade.PNG" width="400"/></p>
+<p>4.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
 int main() {
-    int width = 300; // 國旗寬度
-    int height = 200; // 國旗高度
+    float numbers[5]; // 声明一個數組來存儲5個數字
+    int j, pctr = 0, nctr = 0; // 声明循环计数器、正數計數和負數計數
 
-    gdImagePtr im = gdImageCreateTrueColor(width, height);
-    gdImageAlphaBlending(im, 0);
+    // 提示用戶輸入五個數字，並將它們存儲在數組中
+    printf("\n輸入第一個數字："); 
+    scanf("%f", &amp;numbers[0]);
+    printf("\n輸入第二個數字："); 
+    scanf("%f", &amp;numbers[1]);
+    printf("\n輸入第三個數字："); 
+    scanf("%f", &amp;numbers[2]);
+    printf("\n輸入第四個數字："); 
+    scanf("%f", &amp;numbers[3]);
+    printf("\n輸入第五個數字："); 
+    scanf("%f", &amp;numbers[4]);
 
-    draw_chinese_flag(im);
-
-    FILE *outputFile = fopen("./../images/proc_flag.png", "wb");
-    if (outputFile == NULL) {
-        fprintf(stderr, "打开输出文件时出错。\n");
-        return 1;
+    for (j = 0; j &lt; 5; j++) {
+        if (numbers[j] &gt; 0) // 檢查數字是否為正數
+        {
+            pctr++; // 增加正數計數
+        } else if (numbers[j] &lt; 0) // 檢查數字是否為負數
+        {
+            nctr++; // 增加負數計數
+        }
     }
 
-    gdImagePngEx(im, outputFile, 9);
-    fclose(outputFile);
-    gdImageDestroy(im);
+    // 輸出正數和負數的個數
+    printf("\n正數的個數：%d", pctr);
+    printf("\n負數的個數：%d", nctr);
+    printf("\n");
 
     return 0;
 }
-
-// 声明 draw_star 函数
-void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotation_angle);
-
-void draw_chinese_flag(gdImagePtr img) {
-    int width = gdImageSX(img);
-    int height = gdImageSY(img);
-    int red, yellow;
-
-    // 國旗顏色
-    red = gdImageColorAllocate(img, 255, 0, 0); // 紅色背景
-    yellow = gdImageColorAllocate(img, 255, 255, 0); // 黃色星星
-
-    // 畫紅色背景
-    gdImageFilledRectangle(img, 0, 0, width, height, red);
-
-    // 設置星星的大小和位置
-    int star_size = (int)(0.28 * height);
-    int star_x = (int)(0.165 * width);
-    int star_y = (int)(0.265 * height);
-
-    // 畫大星星
-    draw_star(img, star_x, star_y, star_size, yellow, 11.0);
-
-    // 繪製小星星，位置根據實際國旗比例計算
-    double radius = 0.15 * height;
-    double angle = 360 / 7 * M_PI / 179.0;
-    double rotation = -M_PI / 7.5;
-    int cx = (int)(0.32 * width);
-    int cy = (int)(0.27 * height);
-
-    for (int i = -1; i &lt; 3; i++) {
-        int x = (int)(cx + radius * cos(i * angle + rotation));
-        int y = (int)(cy + radius * sin(i * angle + rotation));
-        draw_star(img, x, y, 19, yellow, M_PI / 5.0);
-    }
-}
-
-void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotation_angle) {
-    gdPoint points[10];
-
-    // 计算星形的五个外点和五个内点
-    double outer_radius = size / 2;
-    double inner_radius = size / 6;
-    double angle = M_PI / 5.0;
-
-    for (int i = 0; i &lt; 10; i++) {
-        double radius = (i % 2 == 0) ? outer_radius : inner_radius;
-        double theta = rotation_angle + i * angle;
-        points[i].x = x + radius * cos(theta);
-        points[i].y = y + radius * sin(theta);
-    }
-
-    // 使用 gdImageFilledPolygon 绘制星形
-    gdImageFilledPolygon(img, points, 10, color);
-}</pre>
+</pre>
 <p><video controls="controls" height="630" width="1008">
-<source src="./../images/2.mp4" type="video/mp4"/></video></p>
-<p><img alt="" height="267" src="./../images/proc_flag.png" width="400"/><br/><br/></p>
+<source src="//images/positive negative"/></video></p>
+<p>5.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-#include &lt;gd.h&gt;
-#include &lt;math.h&gt;
 
-void draw_uk_flag(gdImagePtr img);
-void fillTriangle(gdImagePtr img, int x1, int y1, int x2, int y2, int x3, int y3, int color);
+void process(int arr[], int size, int (*callback)(int))
+{
+    for (int i = 0; i &lt; size; i++)
+    {
+        arr[i] = callback(arr[i]);
+    }
+}
+int square(int n)
+{
+    return n * n;
+}
+
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5, 6};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    printf("Array elements before processing: ");
+    for (int i = 0; i &lt; size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    process(arr, size, square);
+    printf("Square of the array elements after processing: ");
+    for (int i = 0; i &lt; size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}</pre>
+<p><img alt="" height="87" src="./../images/function.PNG" width="640"/></p>
+<p>6.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef int( * compare_func_t)(const void * ,
+  const void * );
+void sort_array(int * arr, size_t n, compare_func_t compare) {
+  qsort(arr, n, sizeof(int), compare);
+}
+int ascending_order(const void * a,
+  const void * b) {
+  const int * ia = (const int * ) a;
+  const int * ib = (const int * ) b;
+  return ( * ia &gt; * ib) - ( * ia &lt; * ib);
+}
+
+int descending_order(const void * a,
+  const void * b) {
+  const int * ia = (const int * ) a;
+  const int * ib = (const int * ) b;
+  return ( * ib &gt; * ia) - ( * ib &lt; * ia);
+}
+int main() {
+  int arr[] = {
+    7,
+    2,
+    0,
+    5,
+    8,
+    9
+  };
+  size_t n = sizeof(arr) / sizeof(int);
+  printf("Original array: ");
+  for (size_t i = 0; i &lt; n; i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
+  sort_array(arr, n, ascending_order);
+  printf("\nAscending order: ");
+  for (size_t i = 0; i &lt; n; i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
+  sort_array(arr, n, descending_order);
+  printf("\nDescending order: ");
+  for (size_t i = 0; i &lt; n; i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
+  return 0;
+}</pre>
+<p><img alt="" height="146" src="./../images/an_2.PNG" width="325"/></p>
+<p>7.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef int( * operation_func_t)(int, int);
+int calculate(int * arr, size_t n, int initial_value, operation_func_t operation) {
+  int result = initial_value;
+  for (size_t i = 0; i &lt; n; i++) {
+    result = operation(result, arr[i]);
+  }
+  return result;
+}
+
+int sum(int a, int b) {
+  return a + b;
+}
+
+int product(int a, int b) {
+  return a * b;
+}
+int main() {
+  int arr[] = {
+    10,
+    20,
+    30,
+    40,
+    50,
+    60
+  };
+  size_t n = sizeof(arr) / sizeof(int);
+  printf("Original array elements: ");
+  for (size_t i = 0; i &lt; n; i++) {
+    printf("%d ", arr[i]);
+  }
+  int sum_result = calculate(arr, n, 0, sum);
+  printf("\nSum: %d", sum_result);
+  int product_result = calculate(arr, n, 1, product);
+  printf("\nProduct: %d", product_result);
+
+  return 0;
+}</pre>
+<p><img alt="" height="79" src="./../images/sum.PNG" width="445"/></p>
+<p>8.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+#include &lt;ctype.h&gt;
+
+
+void modify_string(char * str, int( * modifier)(int)) {
+  while ( * str != '\0') {
+    * str = modifier( * str);
+    str++;
+  }
+}
 
 int main() {
-    // 设置国旗的宽和高
-    int width = 1200;
-    int height = width / 2;
+  char str[100];
+  printf("Input a string: ");
+  fgets(str, sizeof(str), stdin);
 
-    // 创建图像
-    gdImagePtr img = gdImageCreateTrueColor(width, height);
-    gdImageAlphaBlending(img, 0);
+  printf("Select an option:\n");
+  printf("1. Convert to uppercase\n");
+  printf("2. Convert to lowercase\n");
+  int option;
+  scanf("%d", &amp; option);
 
-    // 绘制英国国旗
-    draw_uk_flag(img);
-
-    // 将图像保存到文件
-    FILE *outputFile = fopen("./../images/uk_flag.png", "wb");
-    if (outputFile == NULL) {
-        fprintf(stderr, "打开输出文件时发生错误。\n");
-        return 1;
-    }
-    gdImagePngEx(img, outputFile, 9);
-    fclose(outputFile);
-    gdImageDestroy(img);
-    return 0;
-}
-
-
-
-void draw_uk_flag(gdImagePtr img) {
-    int width = gdImageSX(img);
-    int height = gdImageSY(img);
-
-    int red, white, blue;
-    red = gdImageColorAllocate(img, 204, 0, 0);       // 红色
-    white = gdImageColorAllocate(img, 255, 255, 255); // 白色
-    blue = gdImageColorAllocate(img, 0, 0, 153);      // 蓝色
-
-    gdImageFilledRectangle(img, 0, 0, width, height, blue);
-
-
-  int x1, y1, x2, y2, x3, y3;
-  {
-    int line_thickness = 100;
-    gdImageSetThickness(img, line_thickness);
-
-    int x1, y1, x2, y2, x3, y3;
-
-    // 绘制白色斜线
-    x1 = 0;
-    y1 = 600;
-    x2 = 1200;
-    y2 = 0;
-    gdImageLine(img, x1, y1, x2, y2, white);
-
-    x1 = 0;
-    y1 = 0;
-    x2 = 1200;
-    y2 = 600;
-    gdImageLine(img, x1, y1, x2, y2, white);
-}
-  {
-    int line_thickness = 33;
-    gdImageSetThickness(img, line_thickness);
-
-
-    // 绘制红色斜线
-    x1 = 566;
-    y1 = 300;
-    x2 = 1166;
-    y2 = 0;
-    gdImageLine(img, x1, y1, x2, y2, red);
-
-    x1 = 1233;
-    y1 = 600;
-    x2 = 633;
-    y2 = 300;
-    gdImageLine(img, x1, y1, x2, y2, red);
-
-    x1 = 566;
-    y1 = 300;
-    x2 = -33;
-    y2 = 0;
-    gdImageLine(img, x1, y1, x2, y2, red);
-
-    x1 = 600;
-    y1 = 316.5;
-    x2 = 0;
-    y2 = 616.5;
-    gdImageLine(img, x1, y1, x2, y2, red);
-  }
-  {
-  int line_thickness = 33;
-  gdImageSetThickness(img, line_thickness);
-
-  int x1, y1, x2, y2, x3, y3;
-
-  // 绘制  斜线
-  x1 = 0;
-  y1 = 600;
-  x2 = 1200;
-  y2 = 0;
-  gdImageLine(img, x1, y1, x2, y2, red );
-
-
-  x1 = 1200;
-    y1 = 16.5;
-    x2 = 600;
-    y2 = 316.5;
-    gdImageLine(img, x1, y1, x2, y2, white);
-
-
-  x1 = 0;
-    y1 = 583.5;
-    x2 = 600;
-    y2 = 283.5;
-    gdImageLine(img, x1, y1, x2, y2, white);
-
-
+  switch (option) {
+  case 1:
+    modify_string(str, toupper);
+    printf("Uppercase string: %s", str);
+    break;
+  case 2:
+    modify_string(str, tolower);
+    printf("Lowercase string: %s", str);
+    break;
+  default:
+    printf("Invalid option");
+    break;
   }
 
-    // 绘制白色十字
-    int cross_width = width / 32;
-    int cross_arm_width = width / 32;
-    int center_x = width / 2;
-    int center_y = height / 2;
+  return 0;
+}
 
-    gdImageFilledRectangle(img, center_x + 2.7 * cross_width, 0, center_x - 2.7 * cross_width, height, white);
-    gdImageFilledRectangle(img, 0, center_y + 2.7 * cross_arm_width, width, center_y - 2.7 * cross_arm_width, white);
+</pre>
+<p><img alt="" height="346" src="./../images/an_4.PNG" width="688"/></p>
+<p>9.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
-    // 绘制红色十字
-    gdImageFilledRectangle(img, center_x + 1.5 * cross_width, 0, center_x - 1.5 * cross_width, height, red);
-    gdImageFilledRectangle(img, 0, center_y + 1.5 * cross_arm_width, width, center_y - 1.5 * cross_arm_width, red);
-}</pre>
-<p><img alt="" height="200" src="./../images/uk_flag.png" width="400"/></p>
+#include &lt;stdlib.h&gt;
+ // Function to calculate the average of an array
+double calculate_average(int arr[], int n) {
+  int sum = 0;
+  for (int i = 0; i &lt; n; i++) {
+    sum += arr[i];
+  }
+  return (double) sum / n;
+}
+// Comparison function for sorting the array
+int compare_ints(const void * a,
+  const void * b) {
+  int int_a = * ((int * ) a);
+  int int_b = * ((int * ) b);
+  return int_a - int_b;
+}
+
+// Function to calculate the median of an array
+double calculate_median(int arr[], int n) {
+  // Sort the array in ascending order
+  qsort(arr, n, sizeof(int), compare_ints);
+
+  // Calculate the median
+  double median;
+  if (n % 2 == 0) {
+    median = (double)(arr[n / 2] + arr[n / 2 - 1]) / 2;
+  } else {
+    median = arr[n / 2];
+  }
+  return median;
+}
+
+// Function to calculate the average or median of an array
+double calculate(int arr[], int n, double( * operation)(int arr[], int n)) {
+  return operation(arr, n);
+}
+int main() {
+  int arr[11] = {
+    2,
+    5,
+    4,
+    7,
+    1,
+    8,
+    4,
+    6,
+    5,
+    9,
+    10
+  };
+  int n = sizeof(arr) / sizeof(arr[0]);
+  printf("Original array elements: ");
+  for (size_t i = 0; i &lt; n; i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
+  printf("\nSelect an option:\n");
+  printf("1. Calculate average of the said array elements:\n");
+  printf("2. Calculate median of the said array elements:\n");
+  int option;
+  scanf("%d", &amp; option);
+  double result;
+  switch (option) {
+  case 1:
+    result = calculate(arr, n, calculate_average);
+    printf("Average: %f", result);
+    break;
+  case 2:
+    result = calculate(arr, n, calculate_median);
+    printf("Median: %f", result);
+    break;
+  default:
+    printf("Invalid option");
+    break;
+  }
+
+  return 0;
+}
+</pre>
 <p></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-#include &lt;gd.h&gt;
-#include &lt;math.h&gt;
-
-void draw_japan_flag(gdImagePtr img);
-void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int white, int red );
-
-int main() {
-    // width 3: height 2
-    int width = 1200;
-    int height = 2 * width / 3;
-
-    gdImagePtr img = gdImageCreateTrueColor(width, height);
-    gdImageAlphaBlending(img, 0);
-
-    draw_japan_flag(img);
-
-    FILE *outputFile = fopen("./../images/japan_flag.png", "wb");
-    if (outputFile == NULL) {
-        fprintf(stderr, "Error opening the output file.\n");
-        return 1;
-    }
-    gdImagePngEx(img, outputFile, 9);
-    fclose(outputFile);
-    gdImageDestroy(img);
-    return 0;
-}
-
-void draw_japan_flag(gdImagePtr img) {
-    int width = gdImageSX(img);
-    int height = gdImageSY(img);
-    int red, white ;
-    int center_x =  0.5 * width;
-    int center_y =  0.5 * height;
-    int sun_radius = 145 ;
-
-    // Colors for the flag
-    red = gdImageColorAllocate(img, 242, 0, 0); // Red color
-    white = gdImageColorAllocate(img, 255, 255, 255); // White stripes
-
-
-    // 繪製白色矩形區域
-    gdImageFilledRectangle(img, 0, 0, width, height, white);
-
-
-    // 繪製太陽內部
-    gdImageFilledEllipse(img, center_x, center_y, sun_radius * 3, sun_radius * 3, red);
-}</pre>
-<p><img alt="" height="267" src="./../images/japan_flag.png" width="400"/><video controls="controls" height="630" width="1008">
-<source src="./../images/japan.mp4" type="video/mp4"/></video></p>
+<p><img alt="" height="297" src="./../images/an_5.PNG" width="687"/></p>
+<p>10.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -779,10 +879,7 @@ if (outputFile == NULL) {
       gdImageDestroy(im);
       return 0;
   }</pre>
-<p><img alt="" height="267" src="./../images/korea_flag.png" width="400"/><br/><br/></p>
-<p><video controls="controls" height="630" width="1008">
-<source src="./../images/11japan.mp4" type="video/mp4"/></video></p>
-<p></p><br />w6 << <a href='w6.html'>Previous</a> <a href='w11.html'>Next</a> >> w11</div>
+<p><img alt="" height="86" src="./../images/an_6.PNG" width="345"/></p><br />上課內容 << <a href='上課內容.html'>Previous</a> <a href='c_ex.html'>Next</a> >> c_ex</div>
         
     <!-- footer -->
       <div class="container">
