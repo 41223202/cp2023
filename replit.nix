@@ -1,5 +1,6 @@
 { pkgs }: {
   deps = [
+    pkgs.
     pkgs.libev
     pkgs.gnuplot
     pkgs.gd
